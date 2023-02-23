@@ -1,0 +1,91 @@
+nav
+    position: relative
+    z-index: 2
+
+.nav
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    &-size
+        height: 113px
+    &__left
+        display: flex
+    &__right
+        display: flex
+.phone
+    margin-right: 16px
+.menu
+    display: flex
+    align-items: center
+    margin-left: 70px
+    &__item
+        margin-right: 32px
+        transition: .2s linear
+        &:hover
+            color: #7c8b93
+.logo
+    width: 125px
+    img
+        width: 100% 
+        display: block
+.lang
+    display: flex
+    &__arrow
+        margin-left: 11px
+        cursor: pointer
+        img
+            width: 10px
+    &__wrap
+        position: relative
+        &:hover .lang-menu
+            display: block
+    &-menu
+        &__wrap
+            position: absolute
+            z-index: 2
+            top: 15px
+            width: 55px
+            height: 88px
+            font-size: .9rem
+            right: -12px
+        display: none
+        background: #1F2E36 
+        box-sizing: content-box
+        cursor: pointer
+        padding: 10px 0
+        line-height: 1.5rem
+        border: 1px solid #E6EDF0
+        opacity: 0
+        width: 55px
+        text-align: center
+        transition: .3s linear
+        transform: translateY(-10px)
+        animation: lang-show .3s linear 1 .3s forwards
+        @keyframes lang-show
+            100%
+                opacity: 1
+                transform: translateY(15px)
+    &__item
+        &:hover
+            color: #7c8b93
+
+@media screen and(max-width: 1100px)
+    .menu
+        margin-left: 40px
+        &__item
+            margin-right: 24px
+    .logo
+        width: 110px
+        img
+            width: 100% 
+
+@media screen and(max-width: 910px)
+    .menu
+        display: none
+    .nav-size
+        height: 92px
+@media screen and(max-width: 500px)
+    .phone
+        display: none
+
