@@ -1,0 +1,39 @@
+.real-estate
+    margin-top: 120px
+
+.estate
+    &__wrap
+        display: flex
+        justify-content: space-between
+        margin: 48px 0 100px
+    &__item
+        width: 638px
+        height: 360px
+        border-radius: 24px
+        padding: 32px 48px
+        &:nth-child(1)
+            margin-right: 24px
+            background: #F0F0F0 url(../../public/img/realEstate/item1.png) no-repeat center/cover
+        &:nth-child(2)
+            background: #F0F0F0 url(../../public/img/realEstate/item2.png) no-repeat center/cover
+    &__subtitle
+        font-size: 2rem
+        line-height: 3rem
+        font-weight: 600
+        margin-bottom: 8px
+
+@media screen and(max-width: 768px)
+    .estate
+        &__wrap
+            flex-direction: column
+        &__item
+            width: 100%
+            &:nth-child(1)
+                margin: 0 0 24px
+
+@media screen and(max-width: 500px)
+    .estate
+        &__item
+            height: 207px
+            padding: 24px
+            border-radius: 16px

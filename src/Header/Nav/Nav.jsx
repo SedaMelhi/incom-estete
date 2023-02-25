@@ -21,16 +21,16 @@ const Nav = () => {
                             <img src="./img/header/logo.svg" alt="INCOM" />
                         </div>
                         <div className="menu">
-                            <a href="#" className="menu__item">{t("home")}</a>
-                            <a href="#" className="menu__item">{t("realty")}</a>
-                            <a href="#" className="menu__item">{t("Services")}</a>
+                            <a href="#header" className="menu__item">{t("home")}</a>
+                            <a href="#real-estate" className="menu__item">{t("realty")}</a>
+                            <a href="#services" className="menu__item">{t("Services")}</a>
                             <a href="#" className="menu__item">{t("About")}</a>
-                            <a href="#" className="menu__item">{t("Contacts")}</a>
+                            <a href="#footer" className="menu__item">{t("Contacts")}</a>
                         </div>
                     </div>
                     <div className="nav__right">
                         <div className="phone">
-                            <a href="tel:+79289876543" className="phone__number">+ 7 (928) 987 - 65 - 43</a>
+                            <a href="tel:+971502866186" className="phone__number">+971 502 866186</a>
                         </div>
                         <div className="lang">
                             <div className="lang__active">{lang}</div>

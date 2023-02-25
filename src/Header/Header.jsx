@@ -6,7 +6,7 @@ const Header = () => {
     const { t, i18n } = useTranslation();
     return(
         <header>
-            <div className="header">
+            <div className="header" id='header'>
                 <Nav/>
                 <div className="header__wrap">
                     <div className="wrap">
