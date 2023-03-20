@@ -1,0 +1,57 @@
+.about
+    display: flex
+    @media ( max-width:  768px)
+        flex-direction: column
+    &__wrap
+        padding: 48px 0 150px
+        .title
+            margin-bottom: 48px    
+    &__left
+        margin-right: 24px
+        @media ( max-width:  768px)
+            margin-right: 0
+            margin-bottom: 48px
+    &__item
+        max-width: 859px
+        padding: 24px 32px
+        background-color: #fff
+        border-radius: 24px
+        &:nth-child(1)
+            margin-bottom: 24px
+        &:nth-child(2)
+            margin-bottom: 24px
+    header
+        height: 100%
+        max-width: 417px
+        border-radius: 24px
+        @media ( max-width:  768px)
+            max-width: 100%
+            height: 100vh
+            max-height: 736px
+            min-height: 500px
+        &::before
+            border-radius: 24px
+            background: none
+        &::after
+            border-radius: 24px
+            background-size: 500px
+            @media ( max-width:  620px)
+                background: none
+
+.header
+    &__about
+        min-height: 100%
+        border-radius: 24px
+        padding: 48px 29px
+        background-image: url(../../public/img/about/bg.png)
+        background-position: bottom left
+        background-size: 900px
+    &__text
+        @media ( max-width:  768px)
+            text-align: left
+    &__description
+        @media ( max-width:  768px)
+            margin: 0
+        @media ( max-width:  500px)
+            font-size: 16px
+        

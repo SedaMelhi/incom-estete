@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { HashLink as Link } from 'react-router-hash-link';
 import './nav.sass';
 
 const Nav = () => {
@@ -18,24 +19,26 @@ const Nav = () => {
         <div className="nav nav-size">
           <div className="nav__left">
             <div className="logo">
-              <img src="./img/header/logo.svg" alt="INCOM" />
+              <Link to={'/'}>
+                <img src="./img/header/logo.svg" alt="INCOM" />
+              </Link>
             </div>
             <div className="menu">
-              <a href="#header" className="menu__item">
+              <Link to="/" className="menu__item">
                 {t('home')}
-              </a>
-              <a href="#real-estate" className="menu__item">
+              </Link>
+              <Link to="/#real-estate" className="menu__item">
                 {t('realty')}
-              </a>
-              <a href="#services" className="menu__item">
+              </Link>
+              <Link to="/#services" className="menu__item">
                 {t('Services')}
-              </a>
-              <a href="#" className="menu__item">
+              </Link>
+              <Link to="/about" className="menu__item">
                 {t('About')}
-              </a>
-              <a href="#footer" className="menu__item">
+              </Link>
+              <Link to="#footer" className="menu__item">
                 {t('Contacts')}
-              </a>
+              </Link>
             </div>
           </div>
           <div className="nav__right">

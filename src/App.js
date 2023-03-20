@@ -1,20 +1,18 @@
-import Cards from "./Cards/Cards";
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
-import Investment from "./Investment/Investment";
-import RealEstate from "./RealEstate/RealEstate";
-import Services from "./Services/Services";
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
 const App = () => {
   return (
     <div className="App">
-      <Header/>
-      <RealEstate/>
-      <Cards/>
-      <Investment/>
-      <Services/>
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
