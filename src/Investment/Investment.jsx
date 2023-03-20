@@ -1,82 +1,91 @@
 import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Card from "../Cards/Card/Card";
+import { Pagination, Autoplay, Navigation } from "swiper";
 import 'swiper/css';
-import "../Cards/cards.sass";
+import "./../Cards/cards.sass";
 
-const Investment = () => {
+const Cards = () => {
     const { t, i18n } = useTranslation();
-    const cards = [
-        {
-            url: "./img/cards/card4.png",
-            details: {
-                investment: t("investment-details"),
-            },
-            price: "873 176,66 $",
-            priceText: t("price-text"),
-            address: t("top-address1"),
-            expectedCost: "492 976,77 $",
-            key: 0
-        },
-        {
-            url: "./img/cards/card5.png",
-            details: {
-                investment: t("investment-details"),
-            },
-            price: "178 282,01 $",
-            priceText: t("price-text"),
-            address: t("top-address2"),
-            expectedCost: "202 593,19 $",
-            key: 1
-        },
-        {
-            url: "./img/cards/card6.png",
-            details: {
-                investment: t("investment-details"),
-            },
-            price: "443 679,09 $",
-            priceText: t("price-text"),
-            expectedCost: "961 642,36 $",
-            address: t("top-address1"),
-            key: 2
-        }
-    ]
     return(
         <div className="wrap">
-            <div className="cards">
-                <div className="title">{t("investment-title")}</div>
-                <div className="subtitle">{t("investment-subtitle")}</div>
+            <div className="cards investment">
+                <div className="title">Riviera REVE</div>
+                <a href="./documents/riviera2.pdf" className="card__link" target={"_blank"}>
+                    <img src="./img/cards/save.svg" alt="" />
+                    <span>{t("download")} PDF</span>
+                </a>
                 <div className="cards__wrap">
                     <Swiper
                         spaceBetween={24}
-                        slidesPerView={3}
-                        breakpoints={{
-                            // when window width is >= 640px
-                            0: {
-                                spaceBetween: 10,
-                                slidesPerView: 1.2,
-                            },
-                            500: {
-                                spaceBetween: 24,
-                                slidesPerView: 1.5,
-                            },
-                            // when window width is >= 768px
-                            800: {
-                                slidesPerView: 3,
-                            }
-                          }}
-                    >  
-                        {
-                            cards.map(card => 
-                                <SwiperSlide key={card.key}>
-                                    <Card {...card}/>    
-                                </SwiperSlide> 
-                            )
-                        }
+                        slidesPerView={1}
+                        modules={[Pagination, Autoplay, Navigation]}
+                        autoplay = {{ delay: 3500}}
+                        pagination={{ clickable: true }}
+                        navigation={{prevEl: ".arrow-prev", nextEl: ".arrow-next"}}
+                        // breakpoints={{
+                        //     // when window width is >= 640px
+                        //     0: {
+                        //         spaceBetween: 10,
+                        //         slidesPerView: 1.2,
+                        //     },
+                        //     500: {
+                        //         spaceBetween: 24,
+                        //         slidesPerView: 1.5,
+                        //     },
+                        //     // when window width is >= 768px
+                        //     800: {
+                        //         slidesPerView: 3,
+                        //     }
+                        //   }}
+                    >   
+                        <SwiperSlide>
+                            <div className="card">
+                                <div className="card__image card__image_five">
+                                </div>
+                            </div>
+                        </SwiperSlide> 
+                        <SwiperSlide>
+                            <div className="card">
+                                <div className="card__image card__image_six">
+                                </div>
+                            </div>
+                        </SwiperSlide> 
+                        <SwiperSlide>
+                            <div className="card">
+                                <div className="card__image card__image_seven">
+                                </div>
+                            </div>
+                        </SwiperSlide> 
+                        <SwiperSlide>
+                            <div className="card">
+                                <div className="card__image card__image_eight">
+                                </div>
+                            </div>
+                        </SwiperSlide> 
+                        <SwiperSlide>
+                            <div className="card">
+                                <div className="card__image card__image_nine">
+                                </div>
+                            </div>
+                        </SwiperSlide>   
                     </Swiper>
+                    <div className="arrows">
+                        <div className="arrow-prev">
+                            <svg width="60" height="59" viewBox="0 0 60 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="29.7999" cy="29.4258" r="29.4258" fill="#1F2E36" fillOpacity="0.5"/>
+                                <path d="M33.0686 39.052L23.2594 29.3041L33.0686 19.5562" stroke="white" strokeWidth="2.4523" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </div>
+                        <div className="arrow-next">
+                            <svg width="60" height="59" viewBox="0 0 60 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30.1207" cy="29.4258" r="29.4258" fill="#1F2E36" fillOpacity="0.5"/>
+                                <path d="M26.8497 39.052L36.6589 29.3041L26.8497 19.5562" stroke="white" strokeWidth="2.4523" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
-export default Investment;
+export default Cards;

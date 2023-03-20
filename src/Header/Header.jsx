@@ -11,9 +11,9 @@ const Header = () => {
                 <div className="header__wrap">
                     <div className="wrap">
                         <div className="header__text">
-                            <div className="header__title">
+                            <h1 className="header__title">
                                 {t("header-title")}
-                            </div>
+                            </h1>
                             <div className="header__description">
                                 {t("header-desc")}
                             </div>
