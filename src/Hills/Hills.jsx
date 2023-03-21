@@ -9,7 +9,7 @@ const Hills = () => {
     <div className="wrap">
       <div className="cards hills">
         <div className="title">Jouri Hills</div>
-        <a href="./documents/riviera2.pdf" className="card__link" target={'_blank'}>
+        <a href="./documents/hills.pdf" className="card__link" target={'_blank'}>
           <img src="./img/cards/save.svg" alt="" />
           <span>{t('download')} PDF</span>
         </a>
