@@ -1,83 +1,90 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HashLink as Link } from 'react-router-hash-link';
+import Hamburger from './Hamburger/Hamburger';
+import MenuMobile from './MenuMobile/MenuMobile';
 import './nav.sass';
 
 const Nav = () => {
   const { t, i18n } = useTranslation();
   const activeLang = localStorage.getItem('lang') ? localStorage.getItem('lang') : 'En';
   const [lang, setLang] = useState(activeLang);
+  const [menuOpen, setMenuOpen] = useState(false);
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
-  useEffect(() => {
-    changeLanguage(lang.toLowerCase());
-  }, [lang]);
+
   return (
-    <nav>
-      <div className="wrap">
-        <div className="nav nav-size">
-          <div className="nav__left">
-            <div className="logo">
-              <Link to={'/'}>
-                <img src="./img/header/logo.svg" alt="INCOM" />
-              </Link>
+    <div className="nav-wrap">
+      <nav>
+        <div className="wrap">
+          <div className="nav nav-size">
+            <div className="nav__left">
+              <div className="logo">
+                <Link to={'/'}>
+                  <img src="./img/header/logo.svg" alt="INCOM" />
+                </Link>
+              </div>
+              <div className="menu">
+                <Link to="/" className="menu__item">
+                  {t('home')}
+                </Link>
+                <Link to="/#real-estate" className="menu__item">
+                  {t('realty')}
+                </Link>
+                <Link to="/#services" className="menu__item">
+                  {t('Services')}
+                </Link>
+                <Link to="/about" className="menu__item">
+                  {t('About')}
+                </Link>
+                <Link to="#footer" className="menu__item">
+                  {t('Contacts')}
+                </Link>
+              </div>
             </div>
-            <div className="menu">
-              <Link to="/" className="menu__item">
-                {t('home')}
-              </Link>
-              <Link to="/#real-estate" className="menu__item">
-                {t('realty')}
-              </Link>
-              <Link to="/#services" className="menu__item">
-                {t('Services')}
-              </Link>
-              <Link to="/about" className="menu__item">
-                {t('About')}
-              </Link>
-              <Link to="#footer" className="menu__item">
-                {t('Contacts')}
-              </Link>
-            </div>
-          </div>
-          <div className="nav__right">
-            <div className="phone">
-              <a href="tel:+971502866186" className="phone__number">
-                +971 502 866186
-              </a>
-            </div>
-            <div className="lang">
-              <div className="lang__active">{lang}</div>
-              {/* <div className="long__ru">Ru</div> */}
-              <div className="lang__wrap">
-                <div className="lang__arrow">
-                  <img src="./img/header/arrow.svg" alt="" />
-                </div>
-                <div className="lang-menu__wrap">
-                  <div className="lang-menu">
-                    <div
-                      className="lang__item"
-                      onClick={() => {
-                        setLang('En');
-                      }}>
-                      EN
-                    </div>
-                    <div
-                      className="lang__item"
-                      onClick={() => {
-                        setLang('Ru');
-                      }}>
-                      RU
+            <div className="nav__right">
+              <div className="phone">
+                <a href="tel:+971502866186" className="phone__number">
+                  +971 502 866186
+                </a>
+              </div>
+              <div className="lang">
+                <div className="lang__active">{lang}</div>
+                {/* <div className="long__ru">Ru</div> */}
+                <div className="lang__wrap">
+                  <div className="lang__arrow">
+                    <img src="./img/header/arrow.svg" alt="" />
+                  </div>
+                  <div className="lang-menu__wrap">
+                    <div className="lang-menu">
+                      <div
+                        className="lang__item"
+                        onClick={() => {
+                          setLang('En');
+                          changeLanguage('en');
+                        }}>
+                        EN
+                      </div>
+                      <div
+                        className="lang__item"
+                        onClick={() => {
+                          setLang('Ru');
+                          changeLanguage('ru');
+                        }}>
+                        RU
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <Hamburger menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+      <MenuMobile menuState={menuOpen} setMenuOpen={setMenuOpen} />
+    </div>
   );
 };
 

@@ -1,9 +1,13 @@
 nav
     position: relative
-    z-index: 2
+    z-index: 1000
     background-color: #1F2E36
     color: #fff
-
+    @media ( max-width: 768px )
+        position: fixed
+        top: 0
+        width: 100%
+        
 .nav
     display: flex
     align-items: center
@@ -11,10 +15,15 @@ nav
     width: 100%
     &-size
         height: 113px
+        
     &__left
         display: flex
     &__right
         display: flex
+        align-items: center 
+.header__wrap + .nav-size
+    @media ( max-width: 768px )
+        display: none
 .phone
     margin-right: 16px
 .menu
@@ -82,7 +91,7 @@ nav
         img
             width: 100% 
 
-@media screen and(max-width: 910px)
+@media screen and(max-width: 768px)
     .menu
         display: none
     .nav-size

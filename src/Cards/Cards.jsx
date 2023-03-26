@@ -5,7 +5,7 @@ import 'swiper/css';
 import './cards.sass';
 
 const Cards = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="wrap">
       <div className="cards">

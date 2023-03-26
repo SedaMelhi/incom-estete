@@ -1,4 +1,5 @@
 import Cards from '../Cards/Cards';
+import Damac from '../Damac/Damac';
 import Faq from '../Faq/Faq';
 import Header from '../Header/Header';
 import Hills from '../Hills/Hills';
@@ -15,6 +16,7 @@ const Home = () => {
       <Investment />
       <Hills />
       <Sari />
+      <Damac />
       <Services />
       <Faq />
     </div>

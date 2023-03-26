@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import Nav from '../Header/Nav/Nav';
 import './about.sass';
 const About = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div>
       <Nav />
