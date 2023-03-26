@@ -1,4 +1,5 @@
 import Cards from '../Cards/Cards';
+import Faq from '../Faq/Faq';
 import Header from '../Header/Header';
 import Hills from '../Hills/Hills';
 import Investment from '../Investment/Investment';
@@ -15,6 +16,7 @@ const Home = () => {
       <Hills />
       <Sari />
       <Services />
+      <Faq />
     </div>
   );
 };
