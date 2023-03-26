@@ -4,23 +4,10 @@ import { useTranslation } from 'react-i18next';
 import style from './Menu.module.sass';
 const MenuMobile = ({ menuState, setMenuOpen }) => {
   const { t } = useTranslation();
-  const menu = [
-    { name: t('home'), link: '/' },
-    { name: t('realty'), link: '/#real-estate' },
-    { name: t('Services'), link: '/#services' },
-    { name: t('About'), link: '/about' },
-    { name: t('Contacts'), link: '#footer' },
-  ];
   const [title, setTitle] = useState(false);
-  const [menuItems, setMenuItems] = useState(menu);
 
-  const onMenuClick = (item) => {
-    setTitle(item.name);
-    setMenuItems(item.items);
-  };
   const onTitleClick = () => {
     setTitle(false);
-    setMenuItems(menu);
   };
   return (
     <div className={menuState ? style.open : ''} onClick={() => setMenuOpen(!menuState)}>
@@ -47,33 +34,21 @@ const MenuMobile = ({ menuState, setMenuOpen }) => {
         )}
         <div className="wrap">
           <div className={style.menu}>
-            {menuItems.map((item, i) => (
-              <Link
-                to={item.link}
-                className={style.menu__item}
-                onClick={item.items ? () => onMenuClick(item) : ''}
-                key={i}>
-                {item.name}
-                {item.items ? (
-                  <svg
-                    width="8"
-                    height="14"
-                    viewBox="0 0 8 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M1 13L7 7L1 1"
-                      stroke="#131F2E"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                ) : (
-                  ''
-                )}
-              </Link>
-            ))}
+            <Link to="/#header" className={style.menu__item}>
+              {t('home')}
+            </Link>
+            <Link to="/#real-estate" className={style.menu__item}>
+              {t('realty')}
+            </Link>
+            <Link to="/#services" className={style.menu__item}>
+              {t('Services')}
+            </Link>
+            <Link to="/about" className={style.menu__item}>
+              {t('About')}
+            </Link>
+            <Link to="/#footer" className={style.menu__item}>
+              {t('Contacts')}
+            </Link>
           </div>
         </div>
       </div>

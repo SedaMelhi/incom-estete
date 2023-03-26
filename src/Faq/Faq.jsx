@@ -3,7 +3,7 @@ import SimpleAccordion from './accordion/SimpleAccordion';
 import { useTranslation } from 'react-i18next';
 
 const Faq = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const dataFaq = [
     {
       question: t('faq_1'),

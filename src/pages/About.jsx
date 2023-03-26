@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Nav from '../Header/Nav/Nav';
 import './about.sass';
 const About = () => {
   const { t } = useTranslation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <Nav />
@@ -21,7 +25,7 @@ const About = () => {
             </div>
             <div className="about__right">
               <header>
-                <div className="header header__about" id="header">
+                <div className="header header__about">
                   <div className="header__wrap">
                     <div className="header__text">
                       <h1 className="header__title">{t('header-title')}</h1>

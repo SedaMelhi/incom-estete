@@ -7,13 +7,10 @@ import './nav.sass';
 
 const Nav = () => {
   const { t, i18n } = useTranslation();
-  const activeLang = localStorage.getItem('lang') ? localStorage.getItem('lang') : 'En';
-  const [lang, setLang] = useState(activeLang);
   const [menuOpen, setMenuOpen] = useState(false);
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
-
   return (
     <div className="nav-wrap">
       <nav>
@@ -21,7 +18,7 @@ const Nav = () => {
           <div className="nav nav-size">
             <div className="nav__left">
               <div className="logo">
-                <Link to={'/'}>
+                <Link to={'/#header'}>
                   <img src="./img/header/logo.svg" alt="INCOM" />
                 </Link>
               </div>
@@ -50,7 +47,7 @@ const Nav = () => {
                 </a>
               </div>
               <div className="lang">
-                <div className="lang__active">{lang}</div>
+                <div className="lang__active">{i18n.language}</div>
                 {/* <div className="long__ru">Ru</div> */}
                 <div className="lang__wrap">
                   <div className="lang__arrow">
@@ -61,7 +58,6 @@ const Nav = () => {
                       <div
                         className="lang__item"
                         onClick={() => {
-                          setLang('En');
                           changeLanguage('en');
                         }}>
                         EN
@@ -69,7 +65,6 @@ const Nav = () => {
                       <div
                         className="lang__item"
                         onClick={() => {
-                          setLang('Ru');
                           changeLanguage('ru');
                         }}>
                         RU

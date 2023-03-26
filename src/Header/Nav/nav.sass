@@ -1,6 +1,6 @@
 nav
     position: relative
-    z-index: 1000
+    z-index: 3
     background-color: #1F2E36
     color: #fff
     @media ( max-width: 768px )
@@ -42,6 +42,7 @@ nav
         display: block
 .lang
     display: flex
+    text-transform: capitalize
     &__arrow
         margin-left: 11px
         cursor: pointer
@@ -54,7 +55,7 @@ nav
     &-menu
         &__wrap
             position: absolute
-            z-index: 2
+            z-index: 4
             top: 15px
             width: 55px
             height: 88px

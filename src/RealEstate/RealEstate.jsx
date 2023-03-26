@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import './real-estate.sass';
 
 const RealEstate = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="wrap">
       <div className="real-estate" id="real-estate">
