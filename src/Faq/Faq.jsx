@@ -30,6 +30,11 @@ const Faq = () => {
       answer: t('faq_answer-5'),
       id: 5,
     },
+    {
+      question: t('faq_6'),
+      answer: t('faq_answer-6'),
+      id: 6,
+    },
   ];
   return (
     <div className="faq" id="faq">

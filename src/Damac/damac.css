@@ -1,0 +1,47 @@
+.flex {
+  display: flex;
+  margin: 48px 0 0px;
+}
+@media (max-width: 600px) {
+  .flex {
+    flex-direction: column;
+  }
+}
+.flex__description {
+  margin-top: 48 px;
+}
+@media (max-width: 768px) {
+  .flex__description {
+    margin-top: 32px;
+  }
+}
+.flex__description a {
+  color: #CFAC6A;
+  text-decoration: underline;
+}
+.flex__item {
+  width: 638px;
+  height: 360px;
+  border-radius: 24px;
+  background: url(../../public/img/damac/1.png) no-repeat top right/cover;
+}
+.flex__item:nth-child(2) {
+  background: url(../../public/img/damac/2.png) no-repeat top left/cover;
+  margin-left: 24px;
+}
+@media (max-width: 600px) {
+  .flex__item:nth-child(2) {
+    margin: 24px 0 0;
+  }
+}
+@media (max-width: 768px) {
+  .flex__item {
+    width: 340px;
+    height: 250px;
+  }
+}
+@media (max-width: 600px) {
+  .flex__item {
+    width: 100%;
+  }
+}/*# sourceMappingURL=damac.css.map */

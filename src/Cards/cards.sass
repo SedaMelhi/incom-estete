@@ -1,21 +1,50 @@
 .cards
+    background: #FFFFFF
+    border-radius: 36.3213px
+    margin-top: 120px
+    @media (max-width: 940px)
+        margin-top: 70px
+    @media (max-width: 600px)
+        margin-top: 48px
+    &.wrap
+        padding: 36px 50px
+        @media (max-width: 940px)
+            padding: 24px 32px
+        @media (max-width: 600px)
+            padding: 24px
+            width: calc(100% - 48px)
+    &:last-child
+        margin-bottom: 120px
+        @media (max-width: 600px)
+            margin-bottom: 48px
+        @media (max-width: 940px)
+            margin-bottom: 70px
     &__wrap
         position: relative
         display: flex
         justify-content: space-between
         width: 100%
-        margin: 48px 0 50px
+        margin: 48px 0 0px
         z-index: 0
+.photo
+    position: absolute
+    z-index: 2
+    padding: 9px 18px
+    background-color: rgba(57, 72, 80, 0.5)
+    border-radius: 12px
+    color: #fff
+    top: 36px
+    left: 36px
 
 .swiper
     width: 100%
     &-pagination
         display: flex
         justify-content: center
-        margin-top: 40px
+        margin-top: 30px
         &-bullet 
             display: block
-            margin: 0 20px
+            margin: 0 15px
             width: 295px
             padding-bottom: 15.3%
             border: 1px solid #68b8ff00
@@ -27,23 +56,47 @@
             transition: .4s
             opacity: 0.4
             &:nth-child(1)
-                background-image: url("../../public/img/cards/card1.jpg")
-                background-position: center top
+                background-image: url("../../public/img/cards/riviera1.png")
+                background-position: center
+                margin-left: 0
             &:nth-child(2)
-                background-image: url("../../public/img/cards/card1.jpg")
-                background-position: center bottom
+                background-image: url("../../public/img/cards/riviera2.png")
+                background-position: center
             &:nth-child(3)
-                background-image: url("../../public/img/cards/card2.jpg")
-                background-position: center top
+                background-image: url("../../public/img/cards/riviera3.png")
+                background-position: center
             &:nth-child(4)
-                background-image: url("../../public/img/cards/card2.jpg")
-                background-position: center bottom
+                background-image: url("../../public/img/cards/riviera4.png")
+                background-position: center
+            &:nth-child(5)
+                background-image: url("../../public/img/cards/riviera5.png")
+                background-position: center
+                margin-right: 0
             &-active 
                 opacity: 1
+            @media ( max-width: 600px ) 
+                &:nth-child(1)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(2)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(3)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(4)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(5)
+                    background: none  
+                    background-color: #fff
+                
+                    
     &-wrapper
         height: auto
 .card
-    width: 66%
+    width: 100%
+    text-align: center
     margin: 0 auto
     &__link
         color: #CFAC6A
@@ -53,71 +106,9 @@
             margin-right: 15px
     &__image
         border-radius: 13px
-        background-repeat: no-repeat
-        background-position: center -250px
-        background-size: cover
-        height: 560px
-        &_one
-            background-image: url("../../public/img/cards/card1.jpg")
-            background-position: center top
-        &_two
-            background-image: url("../../public/img/cards/card1.jpg")
-            background-position: center bottom
-        &_three
-            background-image: url("../../public/img/cards/card2.jpg")
-            background-position: center top
-        &_four
-            background-image: url("../../public/img/cards/card2.jpg")
-            background-position: center bottom
-        &_five
-            background-image: url("../../public/img/cards/card3.jpg")
-            background-position: center top
-        &_six
-            background-image: url("../../public/img/cards/card4.jpg")
-            background-position: center top
-        &_seven
-            background-image: url("../../public/img/cards/card5.jpg")
-            background-position: center top
-        &_eight
-            background-image: url("../../public/img/cards/card6.jpg")
-            background-position: center top
-        &_nine
-            background-image: url("../../public/img/cards/card7.jpg")
-            background-position: center top
-        &_9
-            background-image: url("../../public/img/cards/card8.jpg")
-            background-position: center top
-        &_10
-            background-image: url("../../public/img/cards/card9.jpg")
-            background-position: right top
-        &_11
-            background-image: url("../../public/img/cards/card10.jpg")
-            background-position: center top
-        &_12
-            background-image: url("../../public/img/cards/card11.jpg")
-            background-position: center top
-        &_13
-            background-image: url("../../public/img/cards/card12.jpg")
-            background-position: center top
-        &_14
-            background-image: url("../../public/img/cards/card13.jpg")
-            background-position: center top
-        &_15
-            background-image: url("../../public/img/cards/card14.jpg")
-            background-position: left top
-        &_16
-            background-image: url("../../public/img/cards/card15.jpg")
-            background-position: left top
-        &_17
-            background-image: url("../../public/img/cards/card16.jpg")
-            background-position: right top
-        &_18
-            background-image: url("../../public/img/cards/card17.jpg")
-            background-position: left top
-        // img
-        //     display: block
-        //     border-radius: 16px
-        //     width: 100%
+        img
+            width: 100%
+            border-radius: 13px
 .arrows
     position: absolute
     display: flex
@@ -125,89 +116,129 @@
     z-index: 2
     left: 0
     right: 0
-    top: 33%
+    top: 34.5%
     margin: 0 auto
-    width: 64%
+    width: 100%
+    padding: 0 36px
+    @media (max-width: 940px)
+        padding: 0 24px
     svg
-        width: 45px
+        width: 54px
+        @media (max-width: 940px)
+            width: 36px
 .investment
     .swiper-pagination
         &-bullet
             margin: 0 8px
             &:nth-child(1)
-                background-image: url("../../public/img/cards/card3.jpg")
+                background-image: url("../../public/img/cards/reve1.png")
                 background-position: center top
+                margin: 0
             &:nth-child(2)
-                background-image: url("../../public/img/cards/card4.jpg")
+                background-image: url("../../public/img/cards/reve2.png")
                 background-position: center top
             &:nth-child(3)
-                background-image: url("../../public/img/cards/card5.jpg")
+                background-image: url("../../public/img/cards/reve3.png")
                 background-position: center top
             &:nth-child(4)
-                background-image: url("../../public/img/cards/card6.jpg")
+                background-image: url("../../public/img/cards/reve4.png")
                 background-position: center top
             &:nth-child(5)
-                background-image: url("../../public/img/cards/card7.jpg")
+                background-image: url("../../public/img/cards/reve5.png")
                 background-position: center top
+                margin: 0
+            @media ( max-width: 600px ) 
+                &:nth-child(1)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(2)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(3)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(4)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(5)
+                    background: none  
+                    background-color: #fff
 .hills
     .swiper-pagination
         &-bullet
             margin: 0 8px
             &:nth-child(1)
-                background-image: url("../../public/img/cards/card8.jpg")
+                background-image: url("../../public/img/cards/hills1.png")
                 background-position: center top
             &:nth-child(2)
-                background-image: url("../../public/img/cards/card9.jpg")
+                background-image: url("../../public/img/cards/hills2.png")
                 background-position: center top
             &:nth-child(3)
-                background-image: url("../../public/img/cards/card10.jpg")
+                background-image: url("../../public/img/cards/hills3.png")
                 background-position: center top
             &:nth-child(4)
-                background-image: url("../../public/img/cards/card11.jpg")
+                background-image: url("../../public/img/cards/hills4.png")
                 background-position: center top
             &:nth-child(5)
-                background-image: url("../../public/img/cards/card12.jpg")
+                background-image: url("../../public/img/cards/hills5.png")
                 background-position: center top
+            @media ( max-width: 600px ) 
+                &:nth-child(1)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(2)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(3)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(4)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(5)
+                    background: none  
+                    background-color: #fff
 .sari
     .swiper-pagination
         &-bullet
             margin: 0 8px
             &:nth-child(1)
-                background-image: url("../../public/img/cards/card13.jpg")
+                background-image: url("../../public/img/cards/sari1.png")
                 background-position: center top
             &:nth-child(2)
-                background-image: url("../../public/img/cards/card14.jpg")
+                background-image: url("../../public/img/cards/sari2.png")
                 background-position: center top
             &:nth-child(3)
-                background-image: url("../../public/img/cards/card15.jpg")
+                background-image: url("../../public/img/cards/sari3.png")
                 background-position: center top
             &:nth-child(4)
-                background-image: url("../../public/img/cards/card16.jpg")
+                background-image: url("../../public/img/cards/sari4.png")
                 background-position: center top
             &:nth-child(5)
-                background-image: url("../../public/img/cards/card17.jpg")
+                background-image: url("../../public/img/cards/sari5.png")
                 background-position: center top
+            @media ( max-width: 600px ) 
+                &:nth-child(1)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(2)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(3)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(4)
+                    background: none 
+                    background-color: #fff 
+                &:nth-child(5)
+                    background: none  
+                    background-color: #fff
 .swiper-button-disabled
     opacity: 0.3
     transition: .3
-@media screen and (max-width: 940px)
-    .card
-        width: 90%
-        &__image
-            height: 420px
-            min-height: 420px
-    .arrows
-        width: 88%
+@media screen and (max-width: 940px)     
     .swiper-pagination-bullet
         margin: 0 8px
-    // .swiper
-    //     &-pagination
-    //         &-bullet 
-    //             margin: 0 20px
-    //             width: 24%
-    //             border-radius: 8px
-    //     &-wrapper
-    //         height: auto
 
 @media screen and (max-width: 600px)
     .arrows
@@ -233,29 +264,4 @@
                 &-active
                     width: 24px
                     opacity: 1               
-    .card
-        width: 100%
-        &__image
-            height: 320px
-            min-height: 320px
 
-@media screen and (max-width: 500px)
-    .card
-        width: 100%
-        &__image
-            height: 250px
-            min-height: 250px
-
-@media screen and (max-width: 380px)
-    .card
-        width: 100%
-        &__image
-            height: 210px
-            min-height: 210px
-
-@media screen and (max-width: 330px)
-    .card
-        width: 100%
-        &__image
-            height: 180px
-            min-height: 180px

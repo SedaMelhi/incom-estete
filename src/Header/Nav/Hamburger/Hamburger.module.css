@@ -1,0 +1,37 @@
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 27px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 19px;
+}
+.hamburger__wrap {
+  display: none;
+}
+@media (max-width: 768px) {
+  .hamburger__wrap {
+    display: block;
+  }
+}
+.hamburger .line {
+  height: 2px;
+  transition: 0.3s;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.open.hamburger {
+  transform: scale(1.1);
+}
+.open.hamburger .line__middle {
+  opacity: 1;
+  display: none;
+}
+.open.hamburger .line__one {
+  transform: rotate(42deg) translate(8px, 5px);
+}
+.open.hamburger .line__three {
+  transform: rotate(-42deg) translate(8px, -5px);
+}/*# sourceMappingURL=Hamburger.module.css.map */

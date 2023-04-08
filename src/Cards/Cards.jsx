@@ -7,55 +7,55 @@ import './cards.sass';
 const Cards = () => {
   const { t } = useTranslation();
   return (
-    <div className="wrap">
-      <div className="cards">
+    <div className="">
+      <div className="cards wrap">
         <div className="title">{t('top')}</div>
         <a href="./documents/riviera.pdf" className="card__link" target={'_blank'}>
           <img src="./img/cards/save.svg" alt="" />
           <span>{t('download')} PDF</span>
         </a>
         <div className="cards__wrap">
+          <div className="photo">5 {t('photo')}</div>
           <Swiper
             spaceBetween={24}
             slidesPerView={1}
             modules={[Pagination, Autoplay, Navigation]}
             autoplay={{ delay: 3500 }}
             pagination={{ clickable: true }}
-            navigation={{ prevEl: '.arrow-prev', nextEl: '.arrow-next' }}
-            // breakpoints={{
-            //     // when window width is >= 640px
-            //     0: {
-            //         spaceBetween: 10,
-            //         slidesPerView: 1.2,
-            //     },
-            //     500: {
-            //         spaceBetween: 24,
-            //         slidesPerView: 1.5,
-            //     },
-            //     // when window width is >= 768px
-            //     800: {
-            //         slidesPerView: 3,
-            //     }
-            //   }}
-          >
+            navigation={{ prevEl: '.arrow-prev', nextEl: '.arrow-next' }}>
             <SwiperSlide>
               <div className="card">
-                <div className="card__image card__image_one"></div>
+                <div className="card__image">
+                  <img src="./img/cards/riviera1.png" alt="" />
+                </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="card">
-                <div className="card__image card__image_two"></div>
+                <div className="card__image">
+                  <img src="./img/cards/riviera2.png" alt="" />
+                </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="card">
-                <div className="card__image card__image_three"></div>
+                <div className="card__image">
+                  <img src="./img/cards/riviera3.png" alt="" />
+                </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="card">
-                <div className="card__image card__image_four"></div>
+                <div className="card__image">
+                  <img src="./img/cards/riviera4.png" alt="" />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card">
+                <div className="card__image">
+                  <img src="./img/cards/riviera5.png" alt="" />
+                </div>
               </div>
             </SwiperSlide>
           </Swiper>

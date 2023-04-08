@@ -6,9 +6,7 @@ const Damac = () => {
     <div className="wrap">
       <div className="damac">
         <div className="title">DAMAC Properties</div>
-        <div className="flex__description">
-          {t('damac')} <a href="https://www.damacproperties.com">DAMAC Properties</a>
-        </div>
+        <div className="flex__description">{t('damac')} DAMAC Properties</div>
         <div className="flex">
           <div className="flex__item"></div>
           <div className="flex__item"></div>
